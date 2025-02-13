@@ -15,7 +15,7 @@ class Program
         Console.Write("Enter the path to where you want the text file to be stored: ");
         string? outputFolderPath = Console.ReadLine();
 
-        // What base folder to check
+        // How to name the output file
         Console.Write("Enter the name you want to give to the text file: ");
         string? outputFileName = Console.ReadLine();
 
@@ -44,8 +44,18 @@ class Program
         }
 
         Console.WriteLine($"File list saved to: {outputFile}");
+
+        // Run again?
+        Console.Clear();
+        Console.Write("Do you want to run the program again on another file? ");
+        string? response = Console.ReadLine();
+
+        if (response!.ToLower().Trim() == "yes")
+        {
+            Main();
+        }
+
         Console.WriteLine("Press Enter to exit...");
-        Console.ReadLine(); // Keeps the console open
 
     }
 }
